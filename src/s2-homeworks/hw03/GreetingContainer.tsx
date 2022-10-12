@@ -42,14 +42,17 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
     const [error, setError] = useState<string>('') // need to fix any
 
     const totalUsers = users.length // need to fix
-    let lastUserName = name.trim()// need to fix
+    let lastUserName = ""
 
+    if (users.length >= 1) {
+        lastUserName = users[users.length - 1].name
+    }
     const setNameCallback = (e: React.ChangeEvent<HTMLInputElement>) => { // need to fix any
         let nameTrime = e.currentTarget.value
         if (nameTrime) {
             setName(nameTrime)
             setError("")
-            lastUserName = nameTrime.trim()
+
 
         } else {
             setName('')
@@ -60,7 +63,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
     }
     const addUser = () => {
         pureAddUser(name, setError, setName, addUserCallback)
-
+        lastUserName = name
 
     }
 
