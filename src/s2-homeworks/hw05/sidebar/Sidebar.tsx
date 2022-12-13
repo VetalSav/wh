@@ -1,8 +1,8 @@
 import React, {FC} from 'react'
-import {NavLink} from 'react-router-dom'
 import s from './Sidebar.module.css'
 import {PATH} from '../Pages'
 import closeIcon from './closeOutline.svg'
+import {NavLink} from "react-router-dom";
 
 type PropsType = {
     open: boolean
