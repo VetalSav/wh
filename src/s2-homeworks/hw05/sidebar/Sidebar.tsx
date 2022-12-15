@@ -12,7 +12,7 @@ type PropsType = {
 export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
     const sidebarClass = s.sidebar
         + (open ? ' ' + s.open : '')
-    console.log("  \"react-router-dom\": \"6.4.1\",")
+
     return (
         <>
             {/*затемнение справа от открытого меню*/}
