@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import SuperSelect from './common/c5-SuperSelect/SuperSelect'
 import SuperRadio from './common/c6-SuperRadio/SuperRadio'
 import s2 from '../../s1-main/App.module.css'
@@ -12,14 +12,14 @@ import s from './HW7.module.css'
 * */
 
 const arr = [
-    { id: 1, value: 'Pre-Junior', name:'skill',},
-    { id: 2, value: 'Junior' , name:'skill',},
-    { id: 3, value: 'Junior+',name:'skill' ,},
+    {id: 1, value: 'Pre-Junior', name: 'skill',},
+    {id: 2, value: 'Junior', name: 'skill',},
+    {id: 3, value: 'Junior+', name: 'skill',},
 ] // value может быть изменено
 
 const HW7 = () => {
     const [value, onChangeOption] = useState('Pre-Junior') // селект и радио должны работать синхронно
-
+    console.log(value)
     return (
         <div id={'hw7'}>
             <div className={s2.hwTitle}>Homework #7</div>
@@ -33,6 +33,7 @@ const HW7 = () => {
                             options={arr}
                             value={value}
                             onChangeOption={onChangeOption}
+
                         />
                     </div>
                     <div>
@@ -42,6 +43,7 @@ const HW7 = () => {
                             options={arr}
                             value={value}
                             onChangeOption={onChangeOption}
+                            spanProps={{className:value}}
                         />
                     </div>
                 </div>
