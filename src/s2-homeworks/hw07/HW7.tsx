@@ -18,7 +18,7 @@ const arr = [
 ] // value может быть изменено
 
 const HW7 = () => {
-    const [value, onChangeOption] = useState('Pre-Junior') // селект и радио должны работать синхронно
+    const [value, onChangeOption] = useState(1) // селект и радио должны работать синхронно
     console.log(value)
     return (
         <div id={'hw7'}>
@@ -43,7 +43,7 @@ const HW7 = () => {
                             options={arr}
                             value={value}
                             onChangeOption={onChangeOption}
-                            spanProps={{className:value}}
+                            spanProps={{className:value.toString()}}
                         />
                     </div>
                 </div>
