@@ -10,7 +10,9 @@ function Clock() {
     const [show, setShow] = useState<boolean>(false)
 
 
-    const time = (timerId:any)=>{setInterval(() => setDate(new Date(restoreState('hw9-date', Date.now()))), timerId)};
+    const time = (timerId: any) => {
+        setInterval(() => setDate(new Date(restoreState('hw9-date', Date.now()))), timerId)
+    };
 
     timerId && time(timerId)
 
@@ -21,14 +23,10 @@ function Clock() {
         // сохранить ид таймера (https://learn.javascript.ru/settimeout-setinterval#setinterval)
 
 
-
     }
 
     const stop = () => {
-
         setTimerId(undefined)
-
-
 
         // пишут студенты // поставить часы на паузу, обнулить ид таймера (timerId <- undefined)
 
@@ -40,7 +38,7 @@ function Clock() {
     const onMouseLeave = () => { // пишут студенты // спрятать дату если мышка не наведена
         setShow(false)
     }
-    let formatter = new Intl.DateTimeFormat("ru", {
+    let formatter = new Intl.DateTimeFormat("en", {
         hour: "numeric",
         minute: "numeric",
         second: "numeric"
@@ -51,7 +49,7 @@ function Clock() {
 
     // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
     const stringDay = date.toLocaleString("en", {weekday: 'long'}) || <br/> // пишут студенты
-    const stringMonth = date.toLocaleString("ru", {day: "numeric", month: 'numeric', year: 'numeric',}) || <br/> // пишут студенты
+    const stringMonth = date.toLocaleString("en", {day: "numeric", month: 'numeric', year: 'numeric',}) || <br/> // пишут студенты
 
     return (
         <div className={s.clock}>
